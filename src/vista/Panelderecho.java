@@ -16,7 +16,7 @@ public class Panelderecho extends JPanel{
 	private JLabel [] Pokemons = new JLabel [5]; 
 	
 	/** 
-	 * M�todo constructor que crea una instancia de la clase PanelDerecho.
+	 * Método constructor que crea una instancia de la clase PanelDerecho.
 	 */
 	public Panelderecho() {
 		setLayout(new GridLayout(5,1));
@@ -25,7 +25,7 @@ public class Panelderecho extends JPanel{
 	}
 	
 	/** 
-	 * Este m�todo llama al m�todo "inicializarNomPokemons" y a�ade cada posici�n del arreglo al JPanel.
+	 * Este método llama al método "inicializarNomPokemons" y añade cada posición del arreglo al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(5,1)
 	 * <br>
@@ -41,12 +41,12 @@ public class Panelderecho extends JPanel{
 	}
 
 	/** 
-	 * Este m�todo inicializa cada posici�n de el arreglo de JLabels "Pokemons".
+	 * Este método inicializa cada posición de el arreglo de JLabels "Pokemons".
 	 * <br><b>Pre</b><br> 
-	 * Debe existir un arreglo de JLabel con tama�o=5 y con nombre Pokemons.
+	 * Debe existir un arreglo de JLabel con tamaño=5 y con nombre Pokemons.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Cada posici�n del arreglo ha sido inicializado correctamente.
+	 * Cada posición del arreglo ha sido inicializado correctamente.
 	 * <br>
 	 */
 	public void inicializarNomPokemons() {
@@ -54,4 +54,32 @@ public class Panelderecho extends JPanel{
 			this.Pokemons[i]=new JLabel (String.valueOf(i+1));
 		}
 	}
+	
+	/** 
+	 * Este método devuelve el arreglo de labels "Pokemons".
+	 * <br><b>Pre</b><br> 
+	 * Debe existir un arreglo de JLabel con nombre Pokemons.
+	 * <br>
+	 * <br><b>Pos</b><br>  
+	 * Se ha retornado el arreglo de labels correctamente.
+	 * <br>
+	 */
+	public JLabel[] getPokemons() {
+		return Pokemons;
+	}
+	
+	/** 
+	 * Este método recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
+	 * <br><b>Pre</b><br> 
+	 * Debe existir un arreglo de JLabel con nombre Pokemons.
+	 * <br>
+	 * <br><b>Pos</b><br>  
+	 * Se ha modificado el arreglo de labels correctamente.
+	 * <br>
+	 */	
+	public void setPokemons(JLabel[] pokemons) {
+		Pokemons = pokemons;
+	}
+	
+	
 }

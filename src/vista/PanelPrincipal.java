@@ -11,9 +11,12 @@ import javax.swing.JFrame;
  * Contiene informaci�n para la creaci�n del JFrame que muestra toda la interfaz grafica(botones,labels,etc) que el usuario puedo ver/interactuar.
  */
 public class PanelPrincipal extends JFrame {
-	
+	private PanelSur psur;
+	private Panelizquierdo pizq;
+	private PanelCentro pcentro;
+	private Panelderecho pder;
 	/** 
-	 * M�todo constructor que crea una instancia de la clase PanelPrincipal.
+	 * Método constructor que crea una instancia de la clase PanelPrincipal.
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelPrincipal.
 	 * <br>                                           
@@ -28,26 +31,57 @@ public class PanelPrincipal extends JFrame {
 	}
 	
 	/** 
-	 * Este m�todo crea una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho que desp�es se a�aden al JPanel.
+	 * Este método crea una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho que despúes se añaden al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JFrame debe ser un BorderLayout y deben existir las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han creado y a�adido correctamente una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho respectivamente.
+	 * Se han creado y añadido correctamente una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho respectivamente.
 	 * <br>
 	 */
 	public void inicializarComp(){
-		PanelSur psur = new PanelSur();
+		psur = new PanelSur();
 		getContentPane().add(psur, BorderLayout.SOUTH);
 		
-		Panelizquierdo pizq = new Panelizquierdo();
+		pizq = new Panelizquierdo();
 		getContentPane().add(pizq, BorderLayout.WEST);
 		
-		PanelCentro pcentro = new PanelCentro();
+		pcentro = new PanelCentro();
 		getContentPane().add(pcentro, BorderLayout.CENTER);
 		
-		Panelderecho pder = new Panelderecho();
+		pder = new Panelderecho();
 		getContentPane().add(pder, BorderLayout.EAST);
 	}
 
+	public PanelSur getPsur() {
+		return psur;
+	}
+
+	public void setPsur(PanelSur psur) {
+		this.psur = psur;
+	}
+
+	public Panelizquierdo getPizq() {
+		return pizq;
+	}
+
+	public void setPizq(Panelizquierdo pizq) {
+		this.pizq = pizq;
+	}
+
+	public PanelCentro getPcentro() {
+		return pcentro;
+	}
+
+	public void setPcentro(PanelCentro pcentro) {
+		this.pcentro = pcentro;
+	}
+
+	public Panelderecho getPder() {
+		return pder;
+	}
+
+	public void setPder(Panelderecho pder) {
+		this.pder = pder;
+	}
 }

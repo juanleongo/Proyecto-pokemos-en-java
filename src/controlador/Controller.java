@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.sql.rowset.serial.SQLInputImpl;
 import javax.swing.JOptionPane;
 
 import modelo.Pokemon;
@@ -12,16 +13,29 @@ import vista.PanelPrincipal;
 
 public class Controller implements ActionListener {
 	
-	private PanelPrincipal ventanaPrincipal;
+	private PanelPrincipal Vista;
 	private ArrayList<Pokemon> listaPokemons;
 	private Fuego pokemon;
+	
+	private String nombre;
+	private String tipo;
+	
+	private String[] tipos= new String[6];
 	
 	public Controller() {
 		listaPokemons = new ArrayList<Pokemon>();
 
-		ventanaPrincipal = new PanelPrincipal();
-		//asignarOyentes();
+		Vista = new PanelPrincipal();
+		asignarOyentes();
+		inicializar_tipos();
 	}
+	public void asignarOyentes() {
+		Vista.getPsur().getPs1().getAgregar().addActionListener(this);
+		Vista.getPsur().getPs1().getEliminar().addActionListener(this);
+		Vista.getPsur().getPs1().getInfo().addActionListener(this);
+		Vista.getPsur().getPs1().getModificar().addActionListener(this);
+		Vista.getPsur().getCombatir().addActionListener(this);
+		}
 	
 	public double generador_de_numeros(){
 		 double x = (int)(Math.random()*((90-10)+1))+10;
@@ -35,6 +49,15 @@ public class Controller implements ActionListener {
 			if(listaPokemons.get(i).getNombre().equals(nombre)) {
 				resp = true;
 			}
+		}
+
+		return resp;
+	}
+	public String verLista() {
+		String resp = "La lista tiene "+listaPokemons.size() +" personas agregadas \n---\n";
+
+		for (int i = 0; i < listaPokemons.size(); i++) {
+			resp += (i+1) +" - "+listaPokemons.get(i).toString()+" \n";
 		}
 
 		return resp;
@@ -57,13 +80,27 @@ public class Controller implements ActionListener {
 
 	}
 
+public void inicializar_tipos() {		
+		this.tipos[0]="Fuego";
+		this.tipos[1]="Agua";
+		this.tipos[2]="Volador";
+		this.tipos[3]="Electrico";
+		this.tipos[4]="Planta";
+		this.tipos[5]="Roca";		
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand();
 		if(comando.equals("Agregar")) {
-			JOptionPane.showMessageDialog(null, "El pokemon no fue añadido"); 
+			nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon");
 			
+			tipo=(String) JOptionPane.showInputDialog(null,"Selecciona un tipo", "Elegir",JOptionPane.QUESTION_MESSAGE,null,tipos , tipos[0]);
+			agregarPokemon(nombre,tipo);
+			
+		}
+		if(comando.equals("Info")) {
+			JOptionPane.showMessageDialog(null,verLista());
 		}
 		
 	}

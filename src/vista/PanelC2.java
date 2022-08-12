@@ -10,8 +10,10 @@ import javax.swing.JPanel;
  */
 public class PanelC2 extends JPanel{
 	
+	private PanelC2_1 pc2_1;
+	private PanelC2_2 pc2_2;
 	/** 
-	 * M�todo constructor que crea una instancia de la clase PanelC2.
+	 * Método constructor que crea una instancia de la clase PanelC2.
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelC2.
 	 * <br>                                           
@@ -23,19 +25,35 @@ public class PanelC2 extends JPanel{
 	}
 
 	/** 
-	 * Este m�todo crea una instancia de las clases PanelC2_1 y PanelC2_2,que desp�es se a�aden al JPanel.
+	 * Este método crea una instancia de las clases PanelC2_1 y PanelC2_2,que despúes se añaden al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un BoderLayout y deben existir las clases PanelC2_1,PanelC2_2.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han creado y a�adido correctamente una instancia de las clases PanelC2_1 y PanelC2_2 respectivamente.
+	 * Se han creado y añadido correctamente una instancia de las clases PanelC2_1 y PanelC2_2 respectivamente.
 	 * <br>
 	 */
 	public void inicializarComp(){
-		PanelC2_1 pc2_1 = new PanelC2_1();
+		pc2_1 = new PanelC2_1();
 		add(pc2_1, BorderLayout.WEST);
 		
-		PanelC2_2 pc2_2 = new PanelC2_2();
+		pc2_2 = new PanelC2_2();
 		add(pc2_2, BorderLayout.EAST);
+	}
+
+	public PanelC2_1 getPc2_1() {
+		return pc2_1;
+	}
+
+	public void setPc2_1(PanelC2_1 pc2_1) {
+		this.pc2_1 = pc2_1;
+	}
+
+	public PanelC2_2 getPc2_2() {
+		return pc2_2;
+	}
+
+	public void setPc2_2(PanelC2_2 pc2_2) {
+		this.pc2_2 = pc2_2;
 	}
 }

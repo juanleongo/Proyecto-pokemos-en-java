@@ -19,7 +19,7 @@ public class Panelizquierdo extends JPanel{
 	private JLabel [] Pokemons = new JLabel [15]; 
 	
 	/** 
-	 * M�todo constructor que crea una instancia de la clase PanelIzquierdo. 
+	 * Método constructor que crea una instancia de la clase PanelIzquierdo. 
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelIzquierdo.
 	 * <br>                                          
@@ -31,12 +31,12 @@ public class Panelizquierdo extends JPanel{
 	}
 	
 	/** 
-	 * Este m�todo llama al m�todo "inicializarNomPokemons" y a�ade cada posici�n del arreglo al JPanel.
+	 * Este método llama al método "inicializarNomPokemons" y añade cada posición del arreglo al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(15,1)
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han a�adido correctamente cada posici�n del arreglo "Pokemons" al JPanel.
+	 * Se han añadido correctamente cada posición del arreglo "Pokemons" al JPanel.
 	 * <br>
 	 */	
 	public void inicializarComp() {
@@ -47,12 +47,12 @@ public class Panelizquierdo extends JPanel{
 	}
 
 	/** 
-	 * Este m�todo inicializa cada posici�n de el arreglo de JLabels "Pokemons".
+	 * Este método inicializa cada posición de el arreglo de JLabels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel [15] con nombre Pokemons.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se ha inicializado correctamente cada posici�n del arreglo de JLabels "Pokemons".
+	 * Se ha inicializado correctamente cada posición del arreglo de JLabels "Pokemons".
 	 * <br>
 	 */
 	public void inicializarNomPokemons() {
@@ -61,6 +61,30 @@ public class Panelizquierdo extends JPanel{
 		}
 	}
 	
+	/** 
+	 * Este método devuelve el arreglo de labels "Pokemons".
+	 * <br><b>Pre</b><br> 
+	 * Debe existir un arreglo de JLabel con nombre Pokemons.
+	 * <br>
+	 * <br><b>Pos</b><br>  
+	 * Se ha retornado el arreglo de labels correctamente.
+	 * <br>
+	 */
+	public JLabel[] getPokemons() {
+		return Pokemons;
+	}
+	
+	/** 
+	 * Este método recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
+	 * <br><b>Pre</b><br> 
+	 * Debe existir un arreglo de JLabel con nombre Pokemons.
+	 * <br>
+	 * <br><b>Pos</b><br>  
+	 * Se ha modificado el arreglo de labels correctamente.
+	 * <br>
+	 */	
+	public void setPokemons(JLabel[] pokemons) {
+		Pokemons = pokemons;
+	}
 	
 }
-
