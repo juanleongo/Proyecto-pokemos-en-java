@@ -1,4 +1,4 @@
-package co.edu.udistrital.Vista;
+package co.edu.udistrital.vista;
 
 import java.awt.BorderLayout;
 
@@ -10,6 +10,8 @@ import javax.swing.JPanel;
  */
 public class PanelC2 extends JPanel{
 	
+	private PanelC2_1 pc2_1;
+	private PanelC2_2 pc2_2;
 	/** 
 	 * Método constructor que crea una instancia de la clase PanelC2.
 	 * <br><b>Pos</b><br>  
@@ -32,10 +34,26 @@ public class PanelC2 extends JPanel{
 	 * <br>
 	 */
 	public void inicializarComp(){
-		PanelC2_1 pc2_1 = new PanelC2_1();
+		pc2_1 = new PanelC2_1();
 		add(pc2_1, BorderLayout.WEST);
 		
-		PanelC2_2 pc2_2 = new PanelC2_2();
+		pc2_2 = new PanelC2_2();
 		add(pc2_2, BorderLayout.EAST);
+	}
+
+	public PanelC2_1 getPc2_1() {
+		return pc2_1;
+	}
+
+	public void setPc2_1(PanelC2_1 pc2_1) {
+		this.pc2_1 = pc2_1;
+	}
+
+	public PanelC2_2 getPc2_2() {
+		return pc2_2;
+	}
+
+	public void setPc2_2(PanelC2_2 pc2_2) {
+		this.pc2_2 = pc2_2;
 	}
 }

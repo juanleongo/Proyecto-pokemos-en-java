@@ -1,4 +1,4 @@
-package co.edu.udistrital.Vista;
+package co.edu.udistrital.vista;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,7 +11,10 @@ import javax.swing.JFrame;
  * Contiene información para la creación del JFrame que muestra toda la interfaz grafica(botones,labels,etc) que el usuario puedo ver/interactuar.
  */
 public class PanelPrincipal extends JFrame {
-	
+	private PanelSur psur;
+	private Panelizquierdo pizq;
+	private PanelCentro pcentro;
+	private Panelderecho pder;
 	/** 
 	 * Método constructor que crea una instancia de la clase PanelPrincipal.
 	 * <br><b>Pos</b><br>  
@@ -37,17 +40,48 @@ public class PanelPrincipal extends JFrame {
 	 * <br>
 	 */
 	public void inicializarComp(){
-		PanelSur psur = new PanelSur();
+		psur = new PanelSur();
 		getContentPane().add(psur, BorderLayout.SOUTH);
 		
-		Panelizquierdo pizq = new Panelizquierdo();
+		pizq = new Panelizquierdo();
 		getContentPane().add(pizq, BorderLayout.WEST);
 		
-		PanelCentro pcentro = new PanelCentro();
+		pcentro = new PanelCentro();
 		getContentPane().add(pcentro, BorderLayout.CENTER);
 		
-		Panelderecho pder = new Panelderecho();
+		pder = new Panelderecho();
 		getContentPane().add(pder, BorderLayout.EAST);
 	}
 
+	public PanelSur getPsur() {
+		return psur;
+	}
+
+	public void setPsur(PanelSur psur) {
+		this.psur = psur;
+	}
+
+	public Panelizquierdo getPizq() {
+		return pizq;
+	}
+
+	public void setPizq(Panelizquierdo pizq) {
+		this.pizq = pizq;
+	}
+
+	public PanelCentro getPcentro() {
+		return pcentro;
+	}
+
+	public void setPcentro(PanelCentro pcentro) {
+		this.pcentro = pcentro;
+	}
+
+	public Panelderecho getPder() {
+		return pder;
+	}
+
+	public void setPder(Panelderecho pder) {
+		this.pder = pder;
+	}
 }

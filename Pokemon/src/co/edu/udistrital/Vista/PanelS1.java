@@ -1,4 +1,4 @@
-package co.edu.udistrital.Vista;
+package co.edu.udistrital.vista;
 
 import java.awt.GridLayout;
 
@@ -12,6 +12,10 @@ import javax.swing.JPanel;
  */
 public class PanelS1 extends JPanel{
 	
+	private JButton Agregar;
+	private JButton Eliminar;
+	private JButton Info;
+	private JButton Modificar;
 	/** 
 	 * Método constructor que crea una instancia de la clase PanelS1.    
 	 * <br><b>Pos</b><br>  
@@ -21,10 +25,10 @@ public class PanelS1 extends JPanel{
 	public PanelS1() {
 		setLayout(new GridLayout(2,2));
 
-		JButton Agregar = new JButton ("Agregar");
-		JButton Eliminar = new JButton ("Eliminar");
-		JButton Info = new JButton ("Info. Pokemón");
-		JButton Modificar = new JButton("Modificar");
+		 Agregar = new JButton ("Agregar");
+		 Eliminar = new JButton ("Eliminar");
+		 Info = new JButton ("Info. Pokemón");
+		 Modificar = new JButton("Modificar");
 	
 		Agregar.setActionCommand("Agregar");
 		Eliminar.setActionCommand("Eliminar");
@@ -37,4 +41,29 @@ public class PanelS1 extends JPanel{
 		add(Modificar);
 		setVisible(true);
 	}
+	
+	public JButton getAgregar() {
+		return Agregar;
+	}
+	public void setAgregar(JButton agregar) {
+		Agregar = agregar;
+	}
+	public JButton getEliminar() {
+		return Eliminar;
+	}
+	public void setEliminar(JButton eliminar) {
+		Eliminar = eliminar;
+	}
+	public JButton getInfo() {
+		return Info;
+	}
+	public void setInfo(JButton info) {
+		Info = info;
+	}
+	public JButton getModificar() {
+		return Modificar;
+	}
+	public void setModificar(JButton modificar) {
+		Modificar = modificar;
+	}	
 }

@@ -1,4 +1,4 @@
-package co.edu.udistrital.Vista;
+package co.edu.udistrital.vista;
 
 import java.awt.GridLayout;
 
@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 /**
  * Clase PanelC2_2
  *
- * Contiene informaciÃ³n para la creaciÃ³n del Panel que estara contenido en la parte derecha del JPanel PanelC2,que contendra el pokemon elegido por la computadora para combatir.
+ * Contiene información para la creación del Panel que estara contenido en la parte derecha del JPanel PanelC2,que contendra el pokemon elegido por la computadora para combatir.
  */
 public class PanelC2_2 extends JPanel{
 	
@@ -18,7 +18,7 @@ public class PanelC2_2 extends JPanel{
 	private JLabel Pokemon = new JLabel(); 
 	
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelC2_2.
+	 * Método constructor que crea una instancia de la clase PanelC2_2.
 	 * <br><b>Pos</b><br>
 	 * Se han creado una instancia de la clase PanelC2_2.
 	 * <br>                                           
@@ -30,7 +30,7 @@ public class PanelC2_2 extends JPanel{
 	}
 
 	/** 
-	 * Este mÃ©todo inicializa el JLabel "Pokemon" y lo aÃ±ade al JPanel.
+	 * Este método inicializa el JLabel "Pokemon" y lo añade al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(1,1)
 	 * <br>
@@ -44,7 +44,7 @@ public class PanelC2_2 extends JPanel{
 	}
 	
 	/** 
-	 * Este mÃ©todo devuelve el label "Pokemon".
+	 * Este método devuelve el label "Pokemon".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un JLabel con nombre Pokemon.
 	 * <br>
@@ -57,7 +57,7 @@ public class PanelC2_2 extends JPanel{
 	}
 
 	/** 
-	 * Este mÃ©todo recibe un Jlabel y modifica el label "Pokemon".
+	 * Este método recibe un Jlabel y modifica el label "Pokemon".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel con nombre Pokemon.
 	 * <br>

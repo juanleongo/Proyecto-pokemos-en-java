@@ -1,4 +1,4 @@
-package co.edu.udistrital.Vista;
+package co.edu.udistrital.vista;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -12,7 +12,8 @@ import javax.swing.JPanel;
  * Contiene información para la creación del Panel ubicado en el sur del JFrame PanelPrincipal,que contendra los botones con las diferentes acciones que puede seleccionar el usuario.
  */
 public class PanelSur extends JPanel{
-	
+	private PanelS1 ps1;
+	private JButton Combatir;
 	/** 
 	 * Método constructor que crea una instancia de la clase PanelSur.
 	 * <br><b>Pos</b><br>  
@@ -36,14 +37,30 @@ public class PanelSur extends JPanel{
 	 * <br>
 	 */	
 	public void inicializarComp() {
-		PanelS1 ps1 = new PanelS1();
+		ps1 = new PanelS1();
 		add(ps1);
-		JButton Combatir = new JButton ("Combatir");
+		Combatir = new JButton ("Combatir");
 		add(Combatir);
 		Combatir.setActionCommand("Combatir");
 	}
-	
 
 
-	
+	public PanelS1 getPs1() {
+		return ps1;
+	}
+
+
+	public void setPs1(PanelS1 ps1) {
+		this.ps1 = ps1;
+	}
+
+
+	public JButton getCombatir() {
+		return Combatir;
+	}
+
+
+	public void setCombatir(JButton combatir) {
+		Combatir = combatir;
+	}
 }
