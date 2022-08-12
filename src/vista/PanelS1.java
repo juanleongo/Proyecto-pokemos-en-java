@@ -5,8 +5,19 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * Clase PanelS1
+ *
+ * Contiene informaci�n para la creaci�n del JPanel contenido en el JPanel "PanelSur",que contendra cuatro botones de acciones que puede relizar el usuario.
+ */
 public class PanelS1 extends JPanel{
 	
+	/** 
+	 * M�todo constructor que crea una instancia de la clase PanelS1.    
+	 * <br><b>Pos</b><br>  
+	 * Se han creado una instancia de la clase PanelS1.
+	 * <br>                                     
+	 */	
 	public PanelS1() {
 		setLayout(new GridLayout(2,2));
 
@@ -26,6 +37,4 @@ public class PanelS1 extends JPanel{
 		add(Modificar);
 		setVisible(true);
 	}
-
-	
 }
