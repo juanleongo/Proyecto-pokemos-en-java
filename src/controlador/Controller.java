@@ -1,4 +1,4 @@
-package co.edu.udistrital.controlador;
+package co.edu.udistrital.controlador; // Cada uno modifique el package según como este guardado
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
