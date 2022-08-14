@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 /**
  * Clase PanelC1
  *
- * Contiene informaci髇 para la creaci髇 del Panel que estara contenido en la parte superior del JPanel PanelCentro,que contendra los pokemon elegidos por el usuario para combatir.
+ * Contiene informaci贸n para la creaci贸n del Panel que estara contenido en la parte superior del JPanel PanelCentro,que contendra los pokemon elegidos por el usuario para combatir.
  */
 public class PanelC1 extends JPanel{
 	/** 
@@ -15,7 +15,7 @@ public class PanelC1 extends JPanel{
 	 */
 	private JLabel [] Pokemons = new JLabel [5]; 
 	/** 
-	 * M閠odo constructor que crea una instancia de la clase PanelC1.
+	 * M茅todo constructor que crea una instancia de la clase PanelC1.
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelC1.
 	 * <br>                                           
@@ -24,11 +24,11 @@ public class PanelC1 extends JPanel{
 		setLayout(new GridLayout(1,5));
 		inicializarComp(); 	
 		setVisible(true);
-		setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pokemon de la computadora", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 14), new java.awt.Color(0,0,0)));		
+		setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tu equipo pokemon a combatir", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 14), new java.awt.Color(0,0,0)));		
 	}
 	
 	/** 
-	 * Este m閠odo llama al m閠odo "inicializarNomPokemons" y a馻de cada posici髇 del arreglo al JPanel.
+	 * Este m茅todo llama al m茅todo "inicializarNomPokemons" y a帽ade cada posici贸n del arreglo al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(1,5)
 	 * <br>
@@ -44,12 +44,12 @@ public class PanelC1 extends JPanel{
 	}
 	
 	/** 
-	 * Este m閠odo inicializa cada posici髇 de el arreglo de JLabels "Pokemons".
+	 * Este m茅todo inicializa cada posici贸n de el arreglo de JLabels "Pokemons".
 	 * <br><b>Pre</b><br> 
-	 * Debe existir un arreglo de JLabel con tama駉=5 y con nombre Pokemons.
+	 * Debe existir un arreglo de JLabel con tama帽o=5 y con nombre Pokemons.
 	 * <br>
 	 * <br><b>Pos</b><br>  
-	 * Cada posici髇 del arreglo ha sido inicializado correctamente.
+	 * Cada posici贸n del arreglo ha sido inicializado correctamente.
 	 * <br>
 	 */
 	public void inicializarNomPokemons() {
@@ -59,7 +59,7 @@ public class PanelC1 extends JPanel{
 	}
 	
 	/** 
-	 * Este m閠odo devuelve el arreglo de labels "Pokemons".
+	 * Este m茅todo devuelve el arreglo de labels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel con nombre Pokemons.
 	 * <br>
@@ -72,7 +72,7 @@ public class PanelC1 extends JPanel{
 	}
 
 	/** 
-	 * Este m閠odo recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
+	 * Este m茅todo recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel con nombre Pokemons.
 	 * <br>
