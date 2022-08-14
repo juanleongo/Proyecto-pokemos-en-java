@@ -3,10 +3,10 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.StringBufferInputStream;
-import java.text.DecimalFormat;
+
 import java.util.ArrayList;
 
-import javax.sql.rowset.serial.SQLInputImpl;
+
 import javax.swing.JOptionPane;
 
 import modelo.Pokemon;
