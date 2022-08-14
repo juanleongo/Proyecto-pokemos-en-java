@@ -202,14 +202,20 @@ public class Controller implements ActionListener {
 			if(existe) {
 				for (int i = 0; i < listaPokemons.size(); i++) {
 					if(listaPokemons.get(i).getNombre().equals(nombre)) {
-						listaPokemons.get(i).setNombre(JOptionPane.showInputDialog("Introduzca el nuevo nombre del pokemon:"));
-						JOptionPane.showMessageDialog(null, "El pokemon ha sido modificado de su equipo.");
+						for (int i1 = 0; i1 < 15; i1++) {					
+							if(Vista.getPizq().getPokemons()[i1].getText().equals(nombre+"-"+listaPokemons.get(i).getTipo())) {
+								nombre=JOptionPane.showInputDialog("Introduzca el nuevo nombre del pokemon:");
+								listaPokemons.get(i).setNombre(nombre);							
+								Vista.getPizq().getPokemons()[i1].setText(nombre+"-"+listaPokemons.get(i).getTipo());		
+								JOptionPane.showMessageDialog(null, "El pokemon ha sido modificado de su equipo.");
+								}
+							}
+						}
 					}
-				}
 			}else {
 				JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" no existe en su equipo.");
-				
+
 			}
-		}		
+	       }			
 	}
 }
