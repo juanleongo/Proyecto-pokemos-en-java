@@ -53,7 +53,7 @@ public class PanelC1 extends JPanel{
 	 */
 	public void inicializarNomPokemons() {
 		for(int i=0; i<5; i++) {
-			this.Pokemons[i]=new JLabel (String.valueOf(i+1));
+			this.Pokemons[i]=new JLabel (" ");
 		}
 	}
 	
