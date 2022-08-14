@@ -2,8 +2,8 @@ package modelo;
 
 public class Agua extends Pokemon {
 
-	public Agua(String nombre, String tipo, double ataque, double defensa, double velocidad) {
-		super(nombre, tipo, ataque, defensa, velocidad);
+	public Agua(String nombre, String tipo, double ataque, double defensa, double velocidad, double poder) {
+		super(nombre, tipo, ataque, defensa, velocidad, poder);
 		
 	}
 	public Agua(String nombre, String tipo) {

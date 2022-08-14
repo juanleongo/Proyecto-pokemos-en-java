@@ -2,8 +2,8 @@ package modelo;
 
 public class Volador extends Pokemon{
 
-	public Volador(String nombre, String tipo, double ataque, double defensa, double velocidad) {
-		super(nombre, tipo, ataque, defensa, velocidad);
+	public Volador(String nombre, String tipo, double ataque, double defensa, double velocidad,double poder) {
+		super(nombre, tipo, ataque, defensa, velocidad,poder);
 		// TODO Auto-generated constructor stub
 	}
 

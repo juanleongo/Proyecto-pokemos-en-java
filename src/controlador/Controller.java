@@ -2,21 +2,32 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.StringBufferInputStream;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import javax.sql.rowset.serial.SQLInputImpl;
 import javax.swing.JOptionPane;
 
 import modelo.Pokemon;
+import modelo.Roca;
+import modelo.Volador;
+import modelo.Agua;
+import modelo.Electrico;
 import modelo.Fuego;
+import modelo.Planta;
 import vista.PanelPrincipal;
 
 public class Controller implements ActionListener {
 	
 	private PanelPrincipal Vista;
 	private ArrayList<Pokemon> listaPokemons;
-	private Fuego pokemon;
-	
+	private Fuego pokemonfuego;	
+	private Agua pokemonagua;
+	private Electrico pokemonelectro;
+	private Planta pokemonplanta;
+	private Roca pokemonroca;
+	private Volador pokemonvolador;
 	private String nombre;
 	private String tipo;
 	
@@ -68,19 +79,70 @@ public class Controller implements ActionListener {
 		boolean existe = existePokemon(nombre);
 
 
-		if(!existe) {		
-			 
-				pokemon = new Fuego(nombre, tipo, generador_de_numeros(),generador_de_numeros(),generador_de_numeros());
-				listaPokemons.add(pokemon);
-				JOptionPane.showMessageDialog(null, "El pokemon "+nombre+"fua añadido");
-		}
+		if(!existe && listaPokemons.size()<15) {
+				double vel =generador_de_numeros();
+				double def =generador_de_numeros();
+				double atq =generador_de_numeros();				
+			 	double poder = calcular_poder(def, atq,vel);
+			 	
+			 	if(tipo.equals("Fuego")) {
+			 		pokemonfuego = new Fuego(nombre, tipo,atq ,def,vel,poder);
+					listaPokemons.add(pokemonfuego);
+					JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" fua añadido");
+			 	}
+			 	if(tipo.equals("Agua")) {
+			 		pokemonagua= new Agua(nombre, tipo, atq, def, vel, poder);
+			 		listaPokemons.add(pokemonagua);
+			 		JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" fua añadido");
+			 	}
+			 	
+				if(tipo.equals("Electrico")) {
+					pokemonelectro = new Electrico(nombre, tipo, atq, def, vel, poder);
+					listaPokemons.add(pokemonelectro);
+			 		JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" fua añadido");					
+				}
+				if(tipo.equals("Volador")) {
+					pokemonvolador = new Volador(nombre, tipo, atq, def, vel, poder);
+					listaPokemons.add(pokemonvolador);
+			 		JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" fua añadido");					
+				}
+				if(tipo.equals("Planta")) {
+					pokemonplanta = new Planta(nombre, tipo, atq, def, vel, poder);
+					listaPokemons.add(pokemonplanta);
+			 		JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" fua añadido");					
+				}
+				if(tipo.equals("Roca")) {
+					pokemonroca = new Roca(nombre, tipo, atq, def, vel, poder);
+					listaPokemons.add(pokemonroca);
+			 		JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" fua añadido");					
+				}			
+				
+		}			 
+		
 		else {
 			JOptionPane.showMessageDialog(null, "El pokemon no fue añadido");
 		}
 
 	}
+	
+	 public  Pokemon buscarPokemon(String nombre) {
+		 Pokemon encontrado = null;
+	      for (int i=0;i<listaPokemons.size();i++) {
+	            if (listaPokemons.get(i).getNombre().equals(nombre)){
+	            	encontrado = listaPokemons.get(i);                   
+	            }
+	        }
+		return encontrado;
+	    }
+	
+	public double  calcular_poder(double def, double ataque,double vel) {
+		double suma = def+ataque+vel;
+		double poder = suma/3;
+		double formateo =  Math.round(poder * 100) / 100d;
+		return formateo;
+	}
 
-public void inicializar_tipos() {		
+	public void inicializar_tipos() {		
 		this.tipos[0]="Fuego";
 		this.tipos[1]="Agua";
 		this.tipos[2]="Volador";
@@ -100,7 +162,14 @@ public void inicializar_tipos() {
 			
 		}
 		if(comando.equals("Info")) {
-			JOptionPane.showMessageDialog(null,verLista());
+			nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon");
+			if(existePokemon(nombre)) {
+				JOptionPane.showMessageDialog(null,buscarPokemon(nombre));
+				
+			}else{
+				JOptionPane.showMessageDialog(null,"NO SE ENCONTRO NINGUN POKEMON");
+			}
+			
 		}
 		
 	}
