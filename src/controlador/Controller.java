@@ -95,35 +95,40 @@ public class Controller implements ActionListener {
 			if (tipo.equals("Fuego")) {
 				pokemonfuego = new Fuego(nombre, tipo, atq, def, vel, poder);
 				listaPokemons.add(pokemonfuego);
-				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fua añadido");
+				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fue añadido");
 			}
 			if (tipo.equals("Agua")) {
 				pokemonagua = new Agua(nombre, tipo, atq, def, vel, poder);
 				listaPokemons.add(pokemonagua);
-				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fua añadido");
+				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fue añadido");
 			}
 
 			if (tipo.equals("Electrico")) {
 				pokemonelectro = new Electrico(nombre, tipo, atq, def, vel, poder);
 				listaPokemons.add(pokemonelectro);
-				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fua añadido");
+				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fue añadido");
 			}
 			if (tipo.equals("Volador")) {
 				pokemonvolador = new Volador(nombre, tipo, atq, def, vel, poder);
 				listaPokemons.add(pokemonvolador);
-				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fua añadido");
+				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fue añadido");
 			}
 			if (tipo.equals("Planta")) {
 				pokemonplanta = new Planta(nombre, tipo, atq, def, vel, poder);
 				listaPokemons.add(pokemonplanta);
-				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fua añadido");
+				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fue añadido");
 			}
 			if (tipo.equals("Roca")) {
 				pokemonroca = new Roca(nombre, tipo, atq, def, vel, poder);
 				listaPokemons.add(pokemonroca);
-				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fua añadido");
+				JOptionPane.showMessageDialog(null, "El pokemon " + nombre + " fue añadido");
 			}
-
+			for (int i = 0; i < 15; i++) {
+				if (Vista.getPizq().getPokemons()[i].getText().equals(" ")) {
+					Vista.getPizq().getPokemons()[i].setText(nombre + "-" + tipo);
+					return;
+				}
+			}
 		}
 
 		else {
@@ -270,15 +275,15 @@ public class Controller implements ActionListener {
 						Vista.getPcentro().getPanelC2().getPc2_2().getPokemon().setText(listaCombateMaquina.get(0).getNombre()+" "+listaCombateMaquina.get(0).getTipo());					
 		
 						if(listaCombateJugador.get(0).getPoder()>listaCombateMaquina.get(0).getPoder()) {				
-								JOptionPane.showMessageDialog(null,listaCombateJugador.get(0).getNombre()+" ha ganado a "+listaCombateMaquina.get(0).getNombre(),"Ganador",JOptionPane.INFORMATION_MESSAGE); 
+								JOptionPane.showMessageDialog(null,listaCombateJugador.get(0).getNombre()+" con un poder de "+listaCombateJugador.get(0).getPoder()+" ha ganado a "+listaCombateMaquina.get(0).getNombre()+" con un poder de "+listaCombateMaquina.get(0).getPoder(),"Ganador",JOptionPane.INFORMATION_MESSAGE); 
 								listaCombateMaquina.remove(0);
 								
 						}else if(listaCombateJugador.get(0).getPoder()<listaCombateMaquina.get(0).getPoder()){				
-								JOptionPane.showMessageDialog(null,listaCombateMaquina.get(0).getNombre()+" ha ganado a "+listaCombateJugador.get(0).getNombre(),"Ganador",JOptionPane.INFORMATION_MESSAGE); 
+								JOptionPane.showMessageDialog(null,listaCombateMaquina.get(0).getNombre()+" con un poder de "+listaCombateMaquina.get(0).getPoder()+" ha ganado a "+listaCombateJugador.get(0).getNombre()+" con un poder de "+listaCombateJugador.get(0).getPoder(),"Ganador",JOptionPane.INFORMATION_MESSAGE); 
 								listaCombateJugador.remove(0);
 								
 						}else if(listaCombateJugador.get(0).getPoder()==listaCombateMaquina.get(0).getPoder()) {
-								JOptionPane.showMessageDialog(null,listaCombateMaquina.get(0).getNombre()+" ha empatado contra "+listaCombateJugador.get(0).getNombre(),"Ganador",JOptionPane.INFORMATION_MESSAGE); 
+								JOptionPane.showMessageDialog(null,listaCombateMaquina.get(0).getNombre()+" con un poder de "+listaCombateMaquina.get(0).getPoder()+" ha empatado contra "+listaCombateJugador.get(0).getNombre()+" con un poder de "+listaCombateJugador.get(0).getPoder(),"Ganador",JOptionPane.INFORMATION_MESSAGE); 
 								listaCombateMaquina.remove(0);
 								listaCombateJugador.remove(0);
 							}		
@@ -302,18 +307,18 @@ public class Controller implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand();
+		
 		if (comando.equals("Agregar")) {
 			nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon");
+			while(nombre.length()<8 || nombre.length()>16) {
+				JOptionPane.showMessageDialog(null,"Recuerde que el nombre del pokemon debe tener entre 8 y 16 caracteres","Advertencia",JOptionPane.WARNING_MESSAGE);
+				nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon");
+			}
 			tipo = (String) JOptionPane.showInputDialog(null, "Selecciona un tipo", "Elegir",
 					JOptionPane.QUESTION_MESSAGE, null, tipos, tipos[0]);
 			agregarPokemon(nombre, tipo);
-			for (int i = 0; i < 15; i++) {
-				if (Vista.getPizq().getPokemons()[i].getText().equals(" ")) {
-					Vista.getPizq().getPokemons()[i].setText(nombre + "-" + tipo);
-					return;
-				}
-			}
 		}
+		
 		if (comando.equals("Info")) {
 			nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon");
 			if (existePokemon(nombre)) {
@@ -328,7 +333,7 @@ public class Controller implements ActionListener {
 		if (comando.equals("Eliminar")) {
 			nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon que desea eliminar");
 			boolean existe = existePokemon(nombre);
-			eliminarOriginal(existe,listaPokemons); // eliminar 2 lineas en el github			
+			eliminarOriginal(existe,listaPokemons); 			
 		}
 
 		if (comando.equals("Modificar")) {
@@ -365,97 +370,100 @@ public class Controller implements ActionListener {
 			numero = Integer.parseInt(pelea);
 			
 			if (numero > 0 && numero <= 5) {
-				if (numero == 1) {
-					nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
-					boolean existe = existePokemon(nombre);
-					if (existe) {
-						listaCombateJugador.add(buscarPokemon(nombre));
-						Vista.getPcentro().getPanelC1().getPokemons()[0].setText(listaCombateJugador.get(0).getNombre()+" "+listaCombateJugador.get(0).getTipo());
-						eliminarCopia(existe,CopialistaPokemons);
-						JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
-					} else {
-						JOptionPane.showMessageDialog(null, "el pokemon no existe");
+				if(listaPokemons.size()<(numero*2)) {
+					JOptionPane.showMessageDialog(null,"Recuerde que debe tener solo puede hacer combates equitativos, es decir: 1vs1,2vs2,3vs3,4vs4,5vs5 \n Asegurese de tener la cantidad suficiente de pokemon para realizar el combate.","Advertencia",JOptionPane.WARNING_MESSAGE);	
+				}else {
+					if (numero == 1) {
+						nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
+						boolean existe = existePokemon(nombre);
+						if (existe) {
+							listaCombateJugador.add(buscarPokemon(nombre));
+							Vista.getPcentro().getPanelC1().getPokemons()[0].setText(listaCombateJugador.get(0).getNombre()+" "+listaCombateJugador.get(0).getTipo());
+							eliminarCopia(existe,CopialistaPokemons);
+							JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
+						} else {
+							JOptionPane.showMessageDialog(null, "el pokemon no existe");
+							}
+						seleccionarPokemonMaquina(numero);
+						combatir_pokemon();
+						limpiar_listas();
+					}
+					if (numero == 2) {
+						for (int i = 0; i < 2;) {
+							nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
+							boolean existe = existePokemon(nombre);
+							if (existe) {
+								i++;
+								listaCombateJugador.add(buscarPokemon(nombre));
+								Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
+								eliminarCopia(existe,CopialistaPokemons);
+								JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
+							} else {
+								JOptionPane.showMessageDialog(null, "el pokemon no existe");
+							}
+
 						}
-					seleccionarPokemonMaquina(numero);
-					combatir_pokemon();
-					limpiar_listas();
+						seleccionarPokemonMaquina(numero);
+						combatir_pokemon();
+						limpiar_listas();
+					}
+					if (numero == 3) {
+						for (int i = 0; i < 3;) {
+							nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
+							boolean existe = existePokemon(nombre);
+							if (existe) {
+								i++;
+								listaCombateJugador.add(buscarPokemon(nombre));
+								Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
+								eliminarCopia(existe,CopialistaPokemons);
+								JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
+							} else {
+								JOptionPane.showMessageDialog(null, "el pokemon no existe");
+								}
+							}
+						seleccionarPokemonMaquina(numero);
+						combatir_pokemon();
+						limpiar_listas();
+						}
+					if (numero == 4) {
+						for (int i = 0; i < 4;) {
+							nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
+							boolean existe = existePokemon(nombre);
+							if (existe) {
+								i++;
+								listaCombateJugador.add(buscarPokemon(nombre));
+								Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
+								eliminarCopia(existe,CopialistaPokemons);
+								JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
+							} else {
+								JOptionPane.showMessageDialog(null, "el pokemon no existe");
+								}
+
+							}
+						seleccionarPokemonMaquina(numero);
+						combatir_pokemon();
+						limpiar_listas();
+						}
+					if (numero == 5) {
+						for (int i = 0; i < 5;) {
+							nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
+							boolean existe = existePokemon(nombre);
+							if (existe) {
+								i++;
+								listaCombateJugador.add(buscarPokemon(nombre));
+								Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
+								eliminarCopia(existe,CopialistaPokemons);
+								JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
+							} else {
+								JOptionPane.showMessageDialog(null, "el pokemon no existe");
+								}
+
+							}
+						seleccionarPokemonMaquina(numero);
+						combatir_pokemon();
+						limpiar_listas();					
+						}
 				}
-				if (numero == 2) {
-					for (int i = 0; i < 2;) {
-						nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
-						boolean existe = existePokemon(nombre);
-						if (existe) {
-							i++;
-							listaCombateJugador.add(buscarPokemon(nombre));
-							Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
-							eliminarCopia(existe,CopialistaPokemons);
-							JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
-						} else {
-							JOptionPane.showMessageDialog(null, "el pokemon no existe");
-						}
-
-					}
-					seleccionarPokemonMaquina(numero);
-					combatir_pokemon();
-					limpiar_listas();
-				}
-				if (numero == 3) {
-					for (int i = 0; i < 3;) {
-						nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
-						boolean existe = existePokemon(nombre);
-						if (existe) {
-							i++;
-							listaCombateJugador.add(buscarPokemon(nombre));
-							Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
-							eliminarCopia(existe,CopialistaPokemons);
-							JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
-						} else {
-							JOptionPane.showMessageDialog(null, "el pokemon no existe");
-							}
-						}
-					seleccionarPokemonMaquina(numero);
-					combatir_pokemon();
-					limpiar_listas();
-					}
-				if (numero == 4) {
-					for (int i = 0; i < 4;) {
-						nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
-						boolean existe = existePokemon(nombre);
-						if (existe) {
-							i++;
-							listaCombateJugador.add(buscarPokemon(nombre));
-							Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
-							eliminarCopia(existe,CopialistaPokemons);
-							JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
-						} else {
-							JOptionPane.showMessageDialog(null, "el pokemon no existe");
-							}
-
-						}
-					seleccionarPokemonMaquina(numero);
-					combatir_pokemon();
-					limpiar_listas();
-					}
-				if (numero == 5) {
-					for (int i = 0; i < 5;) {
-						nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon para combatir");
-						boolean existe = existePokemon(nombre);
-						if (existe) {
-							i++;
-							listaCombateJugador.add(buscarPokemon(nombre));
-							Vista.getPcentro().getPanelC1().getPokemons()[i-1].setText(listaCombateJugador.get(i-1).getNombre()+" "+listaCombateJugador.get(i-1).getTipo());
-							eliminarCopia(existe,CopialistaPokemons);
-							JOptionPane.showMessageDialog(null, "pokemon añadido a la lista de combate");
-						} else {
-							JOptionPane.showMessageDialog(null, "el pokemon no existe");
-							}
-
-						}
-					seleccionarPokemonMaquina(numero);
-					combatir_pokemon();
-					limpiar_listas();					
-					}
-
 			}
 		}
 	}
