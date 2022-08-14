@@ -21,7 +21,7 @@ public class Controller implements ActionListener {
 
 	private PanelPrincipal Vista;
 	private ArrayList<Pokemon> listaPokemons;
-	private ArrayList<Pokemon> CopialistaPokemons; // nuevo 
+	private ArrayList<Pokemon> CopialistaPokemons; 
 	private ArrayList<Pokemon> listaCombateJugador;
 	private ArrayList<Pokemon> listaCombateMaquina;
 	private Fuego pokemonfuego;
@@ -290,7 +290,7 @@ public class Controller implements ActionListener {
 		if (comando.equals("Eliminar")) {
 			nombre = JOptionPane.showInputDialog("Introduzca el nombre del pokemon que desea eliminar");
 			boolean existe = existePokemon(nombre);
-			eliminarOriginal(existe,listaPokemons); // eliminar 2 lineas en el github			
+			eliminarOriginal(existe,listaPokemons); 			
 		}
 
 		if (comando.equals("Modificar")) {
