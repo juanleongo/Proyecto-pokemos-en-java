@@ -39,7 +39,7 @@ public class PanelC2_2 extends JPanel{
 	 * <br>
 	 */
 	public void inicializarComp() {
-		Pokemon.setText("2");
+		Pokemon.setText(" ");
 		add(Pokemon);
 	}
 	
