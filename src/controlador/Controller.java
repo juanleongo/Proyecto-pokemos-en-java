@@ -172,6 +172,36 @@ public class Controller implements ActionListener {
 			
 		}
 		
+		if(comando.equals("Eliminar")) {
+			nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon que desea eliminar");
+			boolean existe = existePokemon(nombre);
+			if(existe) {
+				for (int i = 0; i < listaPokemons.size(); i++) {
+					if(listaPokemons.get(i).getNombre().equals(nombre)) {
+						listaPokemons.remove(i);
+						JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" ha sido eliminado de su equipo.");
+					}
+				}
+			}else {
+				JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" no existe en su equipo.");
+				
+			}
+		}
+		
+		if(comando.equals("Modificar")) {
+			nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon que desea modificar");
+			boolean existe = existePokemon(nombre);
+			if(existe) {
+				for (int i = 0; i < listaPokemons.size(); i++) {
+					if(listaPokemons.get(i).getNombre().equals(nombre)) {
+						listaPokemons.get(i).setNombre(JOptionPane.showInputDialog("Introduzca el nuevo nombre del pokemon:"));
+						JOptionPane.showMessageDialog(null, "El pokemon ha sido modificado de su equipo.");
+					}
+				}
+			}else {
+				JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" no existe en su equipo.");
+				
+			}
+		}		
 	}
-
 }
