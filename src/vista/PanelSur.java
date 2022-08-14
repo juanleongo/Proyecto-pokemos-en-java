@@ -1,4 +1,4 @@
-package vista;
+package co.edu.udistrital.vista;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -9,13 +9,13 @@ import javax.swing.JPanel;
 /**
  * Clase PanelSur
  *
- * Contiene informaciï¿½n para la creaciï¿½n del Panel ubicado en el sur del JFrame PanelPrincipal,que contendra los botones con las diferentes acciones que puede seleccionar el usuario.
+ * Contiene información para la creación del Panel ubicado en el sur del JFrame PanelPrincipal,que contendra los botones con las diferentes acciones que puede seleccionar el usuario.
  */
 public class PanelSur extends JPanel{
 	private PanelS1 ps1;
 	private JButton Combatir;
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelSur.
+	 * Método constructor que crea una instancia de la clase PanelSur.
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelSur.
 	 * <br>                                           
@@ -28,12 +28,12 @@ public class PanelSur extends JPanel{
 	
 	
 	/** 
-	 * Este mÃ©todo incializa todos los objetos que posteriormente seran agregados al JPanel.
+	 * Este método incializa todos los objetos que posteriormente seran agregados al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(1,2) y debe existir la clase PanelS1.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han creado y aÃ±adido una instancia de la clase PanelS1 y JButton, al JPanel correctamente.
+	 * Se han creado y añadido una instancia de la clase PanelS1 y JButton, al JPanel correctamente.
 	 * <br>
 	 */	
 	public void inicializarComp() {

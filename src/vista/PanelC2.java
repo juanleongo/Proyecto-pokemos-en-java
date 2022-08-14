@@ -1,19 +1,20 @@
-package vista;
+package co.edu.udistrital.vista;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JPanel;
 /**
  * Clase PanelC2
  *
- * Contiene informaciï¿½n para la creaciï¿½n del Panel que estara contenido en la parte inferior del JPanel PanelCentro,que contendra 2 paneles en los cuales se mostraran los pokemon que estan combatiendo actualmente.
+ * Contiene información para la creación del Panel que estara contenido en la parte inferior del JPanel PanelCentro,que contendra 2 paneles en los cuales se mostraran los pokemon que estan combatiendo actualmente.
  */
 public class PanelC2 extends JPanel{
 	
 	private PanelC2_1 pc2_1;
 	private PanelC2_2 pc2_2;
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelC2.
+	 * Método constructor que crea una instancia de la clase PanelC2.
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelC2.
 	 * <br>                                           
@@ -25,19 +26,20 @@ public class PanelC2 extends JPanel{
 	}
 
 	/** 
-	 * Este mÃ©todo crea una instancia de las clases PanelC2_1 y PanelC2_2,que despÃºes se aÃ±aden al JPanel.
+	 * Este método crea una instancia de las clases PanelC2_1 y PanelC2_2,que despúes se añaden al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un BoderLayout y deben existir las clases PanelC2_1,PanelC2_2.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han creado y aÃ±adido correctamente una instancia de las clases PanelC2_1 y PanelC2_2 respectivamente.
+	 * Se han creado y añadido correctamente una instancia de las clases PanelC2_1 y PanelC2_2 respectivamente.
 	 * <br>
 	 */
 	public void inicializarComp(){
 		pc2_1 = new PanelC2_1();
 		add(pc2_1, BorderLayout.WEST);
-		
+		pc2_1.setPreferredSize(new Dimension(250, 600));
 		pc2_2 = new PanelC2_2();
+		pc2_2.setPreferredSize(new Dimension(250, 600));
 		add(pc2_2, BorderLayout.EAST);
 	}
 

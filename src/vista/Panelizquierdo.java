@@ -1,4 +1,4 @@
-package vista;
+package co.edu.udistrital.vista;
 
 import java.awt.GridLayout;
 
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 /**
  * Clase Panelizquierdo
  *
- * Contiene informaciï¿½n para la creaciï¿½n del Panel ubicado en el oeste del JFrame PanelPrincipal,donde apareceran los pokemon aï¿½adidos por el usuario.
+ * Contiene información para la creación del Panel ubicado en el oeste del JFrame PanelPrincipal,donde apareceran los pokemon añadidos por el usuario.
  */
 public class Panelizquierdo extends JPanel{
 
@@ -19,7 +19,7 @@ public class Panelizquierdo extends JPanel{
 	private JLabel [] Pokemons = new JLabel [15]; 
 	
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelIzquierdo. 
+	 * Método constructor que crea una instancia de la clase PanelIzquierdo. 
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelIzquierdo.
 	 * <br>                                          
@@ -28,31 +28,32 @@ public class Panelizquierdo extends JPanel{
 		setLayout(new GridLayout(15,1));
 		inicializarComp();
 		setVisible(true);
+		setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tu equipo pokemon", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 14), new java.awt.Color(0,0,0)));
 	}
 	
 	/** 
-	 * Este mÃ©todo llama al mÃ©todo "inicializarNomPokemons" y aÃ±ade cada posiciÃ³n del arreglo al JPanel.
+	 * Este método llama al método "inicializarNomPokemons" y añade cada posición del arreglo al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(15,1)
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han aÃ±adido correctamente cada posiciÃ³n del arreglo "Pokemons" al JPanel.
+	 * Se han añadido correctamente cada posición del arreglo "Pokemons" al JPanel.
 	 * <br>
 	 */	
 	public void inicializarComp() {
 		inicializarNomPokemons();
-		for(int i=0; i<15; i++) {
+		for(int i=0; i<15; i++) {	
 			add(Pokemons[i]);
 		}
 	}
 
 	/** 
-	 * Este mÃ©todo inicializa cada posiciÃ³n de el arreglo de JLabels "Pokemons".
+	 * Este método inicializa cada posición de el arreglo de JLabels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel [15] con nombre Pokemons.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se ha inicializado correctamente cada posiciÃ³n del arreglo de JLabels "Pokemons".
+	 * Se ha inicializado correctamente cada posición del arreglo de JLabels "Pokemons".
 	 * <br>
 	 */
 	public void inicializarNomPokemons() {
@@ -62,7 +63,7 @@ public class Panelizquierdo extends JPanel{
 	}
 	
 	/** 
-	 * Este mÃ©todo devuelve el arreglo de labels "Pokemons".
+	 * Este método devuelve el arreglo de labels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel con nombre Pokemons.
 	 * <br>
@@ -75,7 +76,7 @@ public class Panelizquierdo extends JPanel{
 	}
 	
 	/** 
-	 * Este mÃ©todo recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
+	 * Este método recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel con nombre Pokemons.
 	 * <br>
@@ -88,3 +89,4 @@ public class Panelizquierdo extends JPanel{
 	}
 	
 }
+

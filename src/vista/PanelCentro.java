@@ -1,4 +1,4 @@
-package vista;
+package co.edu.udistrital.vista;
 
 import java.awt.GridLayout;
 
@@ -7,14 +7,14 @@ import javax.swing.JPanel;
 /**
  * Clase PanelCentro
  *
- * Contiene informaciï¿½n para la creaciï¿½n del Panel ubicado en el centro del JFrame PanelPrincipal,que contendra varios paneles con distintas funcionalidades.
+ * Contiene información para la creación del Panel ubicado en el centro del JFrame PanelPrincipal,que contendra varios paneles con distintas funcionalidades.
  */
 public class PanelCentro extends JPanel{
 	
 	private PanelC1 PanelC1;
 	private PanelC2 PanelC2 ;
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelCentro.
+	 * Método constructor que crea una instancia de la clase PanelCentro.
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelCentro.
 	 * <br>                                           
@@ -26,12 +26,12 @@ public class PanelCentro extends JPanel{
 	}
 
 	/** 
-	 * Este mÃ©todo crea una instancia de las clases PanelC1 y PanelC2,que despÃºes se aÃ±aden al JPanel.
+	 * Este método crea una instancia de las clases PanelC1 y PanelC2,que despúes se añaden al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(2,1) y deben existir las clases PanelC1,PanelC2.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han creado y aÃ±adido correctamente una instancia de las clases PanelC1 y PanelC2 respectivamente.
+	 * Se han creado y añadido correctamente una instancia de las clases PanelC1 y PanelC2 respectivamente.
 	 * <br>
 	 */
 	public void inicializarComp() {

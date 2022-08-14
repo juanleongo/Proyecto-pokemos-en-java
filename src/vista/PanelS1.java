@@ -1,4 +1,4 @@
-package vista;
+package co.edu.udistrital.vista;
 
 import java.awt.GridLayout;
 
@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 /**
  * Clase PanelS1
  *
- * Contiene informaciï¿½n para la creaciï¿½n del JPanel contenido en el JPanel "PanelSur",que contendra cuatro botones de acciones que puede relizar el usuario.
+ * Contiene información para la creación del JPanel contenido en el JPanel "PanelSur",que contendra cuatro botones de acciones que puede relizar el usuario.
  */
 public class PanelS1 extends JPanel{
 	
@@ -17,7 +17,7 @@ public class PanelS1 extends JPanel{
 	private JButton Info;
 	private JButton Modificar;
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelS1.    
+	 * Método constructor que crea una instancia de la clase PanelS1.    
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelS1.
 	 * <br>                                     
@@ -27,7 +27,7 @@ public class PanelS1 extends JPanel{
 
 		 Agregar = new JButton ("Agregar");
 		 Eliminar = new JButton ("Eliminar");
-		 Info = new JButton ("Info. PokemÃ³n");
+		 Info = new JButton ("Info. Pokemón");
 		 Modificar = new JButton("Modificar");
 	
 		Agregar.setActionCommand("Agregar");

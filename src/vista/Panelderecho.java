@@ -1,4 +1,4 @@
-package vista;
+package co.edu.udistrital.vista;
 
 import java.awt.GridLayout;
 
@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 /**
  * Clase Panelderecho
  *
- * Contiene informaciï¿½n para la creaciï¿½n del Panel ubicado en el este del JFrame PanelPrincipal,donde apareceran los pokemon elegidos por la computadora para el combate.
+ * Contiene información para la creación del Panel ubicado en el este del JFrame PanelPrincipal,donde apareceran los pokemon elegidos por la computadora para el combate.
  */
 public class Panelderecho extends JPanel{
 	/** 
@@ -16,16 +16,18 @@ public class Panelderecho extends JPanel{
 	private JLabel [] Pokemons = new JLabel [5]; 
 	
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelDerecho.
+	 * Método constructor que crea una instancia de la clase PanelDerecho.
 	 */
 	public Panelderecho() {
 		setLayout(new GridLayout(5,1));
 		inicializarComp();
 		setVisible(true);
+		setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Equipo pokemon enemigo", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 14), new java.awt.Color(0,0,0)));
+		
 	}
 	
 	/** 
-	 * Este mÃ©todo llama al mÃ©todo "inicializarNomPokemons" y aÃ±ade cada posiciÃ³n del arreglo al JPanel.
+	 * Este método llama al método "inicializarNomPokemons" y añade cada posición del arreglo al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JPanel debe ser un GridLayout(5,1)
 	 * <br>
@@ -41,12 +43,12 @@ public class Panelderecho extends JPanel{
 	}
 
 	/** 
-	 * Este mÃ©todo inicializa cada posiciÃ³n de el arreglo de JLabels "Pokemons".
+	 * Este método inicializa cada posición de el arreglo de JLabels "Pokemons".
 	 * <br><b>Pre</b><br> 
-	 * Debe existir un arreglo de JLabel con tamaÃ±o=5 y con nombre Pokemons.
+	 * Debe existir un arreglo de JLabel con tamaño=5 y con nombre Pokemons.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Cada posiciÃ³n del arreglo ha sido inicializado correctamente.
+	 * Cada posición del arreglo ha sido inicializado correctamente.
 	 * <br>
 	 */
 	public void inicializarNomPokemons() {
@@ -56,7 +58,7 @@ public class Panelderecho extends JPanel{
 	}
 	
 	/** 
-	 * Este mÃ©todo devuelve el arreglo de labels "Pokemons".
+	 * Este método devuelve el arreglo de labels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel con nombre Pokemons.
 	 * <br>
@@ -69,7 +71,7 @@ public class Panelderecho extends JPanel{
 	}
 	
 	/** 
-	 * Este mÃ©todo recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
+	 * Este método recibe un arreglo de Jlabel y modifica el arreglo de labels "Pokemons".
 	 * <br><b>Pre</b><br> 
 	 * Debe existir un arreglo de JLabel con nombre Pokemons.
 	 * <br>

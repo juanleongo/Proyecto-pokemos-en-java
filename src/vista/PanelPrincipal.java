@@ -1,14 +1,15 @@
-package vista;
+package co.edu.udistrital.vista;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
 /**
  * Clase PanelPrincipal
  *
- * Contiene informaciï¿½n para la creaciï¿½n del JFrame que muestra toda la interfaz grafica(botones,labels,etc) que el usuario puedo ver/interactuar.
+ * Contiene información para la creación del JFrame que muestra toda la interfaz grafica(botones,labels,etc) que el usuario puedo ver/interactuar.
  */
 public class PanelPrincipal extends JFrame {
 	private PanelSur psur;
@@ -16,14 +17,14 @@ public class PanelPrincipal extends JFrame {
 	private PanelCentro pcentro;
 	private Panelderecho pder;
 	/** 
-	 * MÃ©todo constructor que crea una instancia de la clase PanelPrincipal.
+	 * Método constructor que crea una instancia de la clase PanelPrincipal.
 	 * <br><b>Pos</b><br>  
 	 * Se han creado una instancia de la clase PanelPrincipal.
 	 * <br>                                           
 	 */	
 	public PanelPrincipal() {
 		setTitle("Pokemon");
-		setSize(800, 500);
+		setSize(1000, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout());
 		inicializarComp();
@@ -31,12 +32,12 @@ public class PanelPrincipal extends JFrame {
 	}
 	
 	/** 
-	 * Este mÃ©todo crea una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho que despÃºes se aÃ±aden al JPanel.
+	 * Este método crea una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho que despúes se añaden al JPanel.
 	 * <br><b>Pre</b><br> 
 	 * El layout del JFrame debe ser un BorderLayout y deben existir las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho.
 	 * <br>
 	 * <b>Pos</b><br>  
-	 * Se han creado y aÃ±adido correctamente una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho respectivamente.
+	 * Se han creado y añadido correctamente una instancia de las clases PanelSur,Panelizquierdo,PanelCentro y Panelderecho respectivamente.
 	 * <br>
 	 */
 	public void inicializarComp(){
@@ -45,12 +46,18 @@ public class PanelPrincipal extends JFrame {
 		
 		pizq = new Panelizquierdo();
 		getContentPane().add(pizq, BorderLayout.WEST);
+		pizq.setPreferredSize(new Dimension(200, 600));
 		
 		pcentro = new PanelCentro();
 		getContentPane().add(pcentro, BorderLayout.CENTER);
+		pcentro.setPreferredSize(new Dimension(500, 600));
 		
 		pder = new Panelderecho();
 		getContentPane().add(pder, BorderLayout.EAST);
+		pder.setPreferredSize(new Dimension(200, 600));
+		
+		pack();
+		setLocationRelativeTo(null);
 	}
 
 	public PanelSur getPsur() {
