@@ -57,7 +57,7 @@ public class Panelizquierdo extends JPanel{
 	 */
 	public void inicializarNomPokemons() {
 		for(int i=0; i<15; i++) {
-			this.Pokemons[i]=new JLabel (String.valueOf(i+1));
+			this.Pokemons[i]=new JLabel (" ");
 		}
 	}
 	
