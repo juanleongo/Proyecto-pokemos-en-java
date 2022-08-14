@@ -156,10 +156,14 @@ public class Controller implements ActionListener {
 		String comando = e.getActionCommand();
 		if(comando.equals("Agregar")) {
 			nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon");
-			
 			tipo=(String) JOptionPane.showInputDialog(null,"Selecciona un tipo", "Elegir",JOptionPane.QUESTION_MESSAGE,null,tipos , tipos[0]);
 			agregarPokemon(nombre,tipo);
-			
+			for (int i = 0; i < 15; i++) {					
+				if(Vista.getPizq().getPokemons()[i].getText().equals(" ")) {
+					Vista.getPizq().getPokemons()[i].setText(nombre+"-"+tipo);	
+					return;
+					}
+				}			
 		}
 		if(comando.equals("Info")) {
 			nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon");
@@ -173,18 +177,22 @@ public class Controller implements ActionListener {
 		}
 		
 		if(comando.equals("Eliminar")) {
-			nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon que desea eliminar");
-			boolean existe = existePokemon(nombre);
-			if(existe) {
-				for (int i = 0; i < listaPokemons.size(); i++) {
-					if(listaPokemons.get(i).getNombre().equals(nombre)) {
-						listaPokemons.remove(i);
-						JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" ha sido eliminado de su equipo.");
-					}
-				}
+		nombre= JOptionPane.showInputDialog("Introduzca el nombre del pokemon que desea eliminar");
+		boolean existe = existePokemon(nombre);
+		if(existe) {
+			for (int i = 0; i < listaPokemons.size(); i++) {
+				if(listaPokemons.get(i).getNombre().equals(nombre)) {
+					for (int i1 = 0; i1 < 15; i1++) {					
+						if(Vista.getPizq().getPokemons()[i1].getText().equals(nombre+"-"+listaPokemons.get(i).getTipo())) {
+							Vista.getPizq().getPokemons()[i1].setText(" ");					
+							}
+						}
+					listaPokemons.remove(i);
+					JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" ha sido eliminado de su equipo.");
+					}	
+				}		
 			}else {
 				JOptionPane.showMessageDialog(null, "El pokemon "+nombre+" no existe en su equipo.");
-				
 			}
 		}
 		
