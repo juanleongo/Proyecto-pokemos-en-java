@@ -1,25 +1,48 @@
 package modelo;
 
 public abstract  class Pokemon {
-	
+	/** 
+	 * Representa el nombre del pokemon                                       
+	 */
 	protected String nombre;
+	/** 
+	 * Representa el tipo  del pokemon                                       
+	 */
 	protected String tipo;
+	/** 
+	 * Representa el valor del ataque del pokemon                                       
+	 */
 	protected  double ataque;
+	/** 
+	 * Representa el valor de defensa del pokemon                                       
+	 */
 	protected  double defensa;
+	/** 
+	 * Representa el valor de velocidad del pokemon                                       
+	 */
 	protected  double velocidad;
+	/** 
+	 * Representa el valor del del pokemon.Es el promedio de ataque,defensa y velocidad.                                       
+	 */
 	protected  double poder;
 	
-
+	/** 
+	 * Método abstracto que definira las habilidades del pokemon                                     
+	 */
 	abstract void habilidadAtaque();
 	
-
+	/** 
+	 * Crea una instancia de la clase Pokemon.
+	 */
 	public Pokemon(String nombre, String tipo) {
 		
 		this.nombre = nombre;
 		this.tipo = tipo;
 	}
 
-
+	/** 
+	 * Crea una instancia de la clase Pokemon.
+	 */
 	public Pokemon(String nombre, String tipo, double ataque, double defensa, double velocidad,double poder) {
 	
 		this.nombre = nombre;
@@ -30,7 +53,7 @@ public abstract  class Pokemon {
 		this.poder = poder;
 	}
 
-
+	
 	public String getNombre() {
 		return nombre;
 	}
